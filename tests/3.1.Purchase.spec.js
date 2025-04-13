@@ -23,9 +23,7 @@ test("End-to-End Purchase Flow for a Single Product", async ({ page }) => {
   await page.getByRole("button", { name: "View Cart" }).click();
   //Cart Assertion
   await expect(page.getByText("Cart is empty")).not.toBeVisible();
-
   // await expect(page.getByText("Cart is empty")).toBeVisible();
-
   //Click on the Checkout button on the My Card page
   await page.getByRole("button", { name: "Checkout" }).click();
   await page.waitForTimeout(5000);
@@ -33,7 +31,6 @@ test("End-to-End Purchase Flow for a Single Product", async ({ page }) => {
   await page
     .getByRole("textbox", { name: "Email" })
     .fill("mihhail.karuzin@gmail.com");
-
   await page.getByRole("textbox", { name: "First name" }).fill("Mihhail");
   await page.getByRole("textbox", { name: "Last name" }).fill("Karuzin");
   await page.getByRole("textbox", { name: "Phone" }).fill("+37255912318");

@@ -134,7 +134,7 @@ test("Login with the invalid Password", async ({ page }) => {
   await expect(page.getByText("Wrong email or password")).toBeVisible();
 });
 
-test.only("Login with non-existent user email", async ({ page }) => {
+test("Login with non-existent user email", async ({ page }) => {
   // Step 1: Navigate to the website
   //await page.goto("https://www.testing101.net/");
   await page.goto(URLs.pageLinkHomePage);
