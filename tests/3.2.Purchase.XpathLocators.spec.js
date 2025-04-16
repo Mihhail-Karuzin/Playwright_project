@@ -4,6 +4,7 @@ import { consentPopup } from "../Common/ConsentPopup";
 import { pagePLP } from "../PageObjects/PagePLP";
 import { pageCartPage } from "../PageObjects/PageCartPage";
 import { pageCheckout } from "../PageObjects/PageCheckout";
+import { testData } from "../Common/TestData";
 
 test.only("End-to-End purchase flow with the XPath locators", async ({
   page,
@@ -67,19 +68,20 @@ test.only("End-to-End purchase flow with the XPath locators", async ({
   const checkoutPage = new pageCheckout(page);
   //const fieldEmail = page.locator("xpath=//input[@aria-label='Email']");
   const fieldEmail = page.locator(checkoutPage.fieldEmail);
-  await fieldEmail.fill("mihhail.karuzin@gmail.com");
+  //await fieldEmail.fill("mihhail.karuzin@gmail.com");
+  await fieldEmail.fill(testData.checkouCustomerDetails.email);
 
   // const fielFirstName = page.locator("xpath=//input[@aria-label='First name']");
   const fielFirstName = page.locator(checkoutPage.fielFirstName);
-  await fielFirstName.fill("Mihhail");
+  await fielFirstName.fill(testData.checkouCustomerDetails.firstName);
 
   //const fieldLastName = page.locator("xpath=//input[@aria-label='Last name']");
   const fieldLastName = page.locator(checkoutPage.fieldLastName);
-  await fieldLastName.fill("Karuzin");
+  await fieldLastName.fill(testData.checkouCustomerDetails.lastName);
 
   //const fieldPhone = page.locator("xpath=//input[@aria-label='Phone']");
   const fieldPhone = page.locator(checkoutPage.fieldPhone);
-  await fieldPhone.fill("512-34567");
+  await fieldPhone.fill(testData.checkouCustomerDetails.phone);
 
   //Locate the country dropdown input
   /*
@@ -103,11 +105,11 @@ test.only("End-to-End purchase flow with the XPath locators", async ({
   );
   */
   const fieldAdress = page.locator(checkoutPage.fieldAdress);
-  await fieldAdress.fill("123 Street");
+  await fieldAdress.fill(testData.checkoutDeliveryDetails.adress);
 
   //const fieldCity = page.locator("xpath=//input[@aria-label='City']");
   const fieldCity = page.locator(checkoutPage.fieldCity);
-  await fieldCity.fill("Tallinn");
+  await fieldCity.fill(testData.checkoutDeliveryDetails.city);
 
   /*
   const fieldZipCode = page.locator(
@@ -115,7 +117,7 @@ test.only("End-to-End purchase flow with the XPath locators", async ({
   );
   */
   const fieldZipCode = page.locator(checkoutPage.fieldZipCode);
-  await fieldZipCode.fill("12345");
+  await fieldZipCode.fill(testData.checkoutDeliveryDetails.zipCode);
 
   /*
   const buttonContinueCheckout1 = page.locator(
