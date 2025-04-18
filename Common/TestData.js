@@ -1,14 +1,14 @@
 export class testData {
-  //Define date here
-  static checkouCustomerDetails = {
+  static CustomerDetails = {
     email: "mihhail.karuzin@gmail.com",
     firstName: "Mihhail",
     lastName: "Karuzin",
     phone: "512-34567",
+    companyName: "TestCompany",
   };
 
-  static checkoutDeliveryDetails = {
-    adress: "123 Street",
+  static DeliveryDetails = {
+    address: "123 Street",
     city: "Tallinn",
     zipCode: "12345",
   };

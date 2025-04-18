@@ -71,5 +71,4 @@ test("Add a new adress in My Account  ", async ({ page }) => {
   Estonia
   +37255912318
 `);
-  await page.pause();
 });

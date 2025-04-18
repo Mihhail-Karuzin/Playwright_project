@@ -5,7 +5,7 @@ import { pageLogin } from "../PageObjects/PageLogin";
 import { pageSignUp } from "../PageObjects/PageSignUp";
 import { testData } from "../Common/TestData";
 
-test.only("Login with valid credentials", async ({ page }) => {
+test("Login with valid credentials", async ({ page }) => {
   test.setTimeout(50000);
   //Navigate to the Testing101 website
   await page.goto(URLs.pageLinkHomePage);
@@ -27,7 +27,7 @@ test.only("Login with valid credentials", async ({ page }) => {
   await expect(page.getByLabel("mihhailkaruzin account menu")).toBeVisible();
 });
 
-test.only("Login with empty fields of the Login form", async ({ page }) => {
+test("Login with empty fields of the Login form", async ({ page }) => {
   test.setTimeout(50000);
   await page.goto(URLs.pageLinkHomePage);
   await page.waitForTimeout(5000);
@@ -47,9 +47,7 @@ test.only("Login with empty fields of the Login form", async ({ page }) => {
   await expect(page.getByText("Make sure you enter a password.")).toBeVisible();
 });
 
-test.only("Login with an empty Email field of the Login form", async ({
-  page,
-}) => {
+test("Login with an empty Email field of the Login form", async ({ page }) => {
   test.setTimeout(50000);
   await page.goto(URLs.pageLinkHomePage);
   await page.waitForTimeout(5000);
@@ -71,7 +69,7 @@ test.only("Login with an empty Email field of the Login form", async ({
   await expect(page.getByText("Email cannot be blank")).toBeVisible();
 });
 
-test.only("Login with an empty Password field of the Login form", async ({
+test("Login with an empty Password field of the Login form", async ({
   page,
 }) => {
   test.setTimeout(50000);
@@ -93,7 +91,7 @@ test.only("Login with an empty Password field of the Login form", async ({
   await expect(page.getByText("Make sure you enter a password.")).toBeVisible();
 });
 
-test.only("Login with the invalid format of the Email", async ({ page }) => {
+test("Login with the invalid format of the Email", async ({ page }) => {
   test.setTimeout(50000);
   await page.goto(URLs.pageLinkHomePage);
   await page.waitForTimeout(5000);
@@ -120,7 +118,7 @@ test.only("Login with the invalid format of the Email", async ({ page }) => {
   ).toBeVisible();
 });
 
-test.only("Login with the invalid Password", async ({ page }) => {
+test("Login with the invalid Password", async ({ page }) => {
   test.setTimeout(50000);
   await page.goto(URLs.pageLinkHomePage);
   await page.waitForTimeout(5000);
@@ -143,7 +141,7 @@ test.only("Login with the invalid Password", async ({ page }) => {
   await expect(page.getByText("Wrong email or password")).toBeVisible();
 });
 
-test.only("Login with non-existent user email", async ({ page }) => {
+test("Login with non-existent user email", async ({ page }) => {
   test.setTimeout(50000);
   await page.goto(URLs.pageLinkHomePage);
   await page.waitForTimeout(5000);

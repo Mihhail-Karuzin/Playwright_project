@@ -67,19 +67,19 @@ test("End-to-End purchase flow with the XPath locators", async ({ page }) => {
   //const fieldEmail = page.locator("xpath=//input[@aria-label='Email']");
   const fieldEmail = page.locator(checkoutPage.fieldEmail);
   //await fieldEmail.fill("mihhail.karuzin@gmail.com");
-  await fieldEmail.fill(testData.checkouCustomerDetails.email);
+  await fieldEmail.fill(testData.CustomerDetails.email);
 
   // const fielFirstName = page.locator("xpath=//input[@aria-label='First name']");
   const fielFirstName = page.locator(checkoutPage.fielFirstName);
-  await fielFirstName.fill(testData.checkouCustomerDetails.firstName);
+  await fielFirstName.fill(testData.CustomerDetails.firstName);
 
   //const fieldLastName = page.locator("xpath=//input[@aria-label='Last name']");
   const fieldLastName = page.locator(checkoutPage.fieldLastName);
-  await fieldLastName.fill(testData.checkouCustomerDetails.lastName);
+  await fieldLastName.fill(testData.CustomerDetails.lastName);
 
   //const fieldPhone = page.locator("xpath=//input[@aria-label='Phone']");
   const fieldPhone = page.locator(checkoutPage.fieldPhone);
-  await fieldPhone.fill(testData.checkouCustomerDetails.phone);
+  await fieldPhone.fill(testData.CustomerDetails.phone);
 
   //Locate the country dropdown input
   /*
@@ -103,11 +103,11 @@ test("End-to-End purchase flow with the XPath locators", async ({ page }) => {
   );
   */
   const fieldAdress = page.locator(checkoutPage.fieldAdress);
-  await fieldAdress.fill(testData.checkoutDeliveryDetails.adress);
+  await fieldAdress.fill(testData.DeliveryDetails.adress);
 
   //const fieldCity = page.locator("xpath=//input[@aria-label='City']");
   const fieldCity = page.locator(checkoutPage.fieldCity);
-  await fieldCity.fill(testData.checkoutDeliveryDetails.city);
+  await fieldCity.fill(testData.DeliveryDetails.city);
 
   /*
   const fieldZipCode = page.locator(
@@ -115,7 +115,7 @@ test("End-to-End purchase flow with the XPath locators", async ({ page }) => {
   );
   */
   const fieldZipCode = page.locator(checkoutPage.fieldZipCode);
-  await fieldZipCode.fill(testData.checkoutDeliveryDetails.zipCode);
+  await fieldZipCode.fill(testData.DeliveryDetails.zipCode);
 
   /*
   const buttonContinueCheckout1 = page.locator(
